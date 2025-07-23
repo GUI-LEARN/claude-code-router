@@ -12,8 +12,8 @@ export const apiKeyAuth =
       return done();
     }
 
-    const authKey: string =
-      req.headers.authorization || req.headers["x-api-key"];
+    // @ts-ignore
+      const authKey: string = req.headers.authorization || req.headers["x-api-key"];
     if (!authKey) {
       reply.status(401).send("APIKEY is missing");
       return;
