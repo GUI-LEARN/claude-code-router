@@ -94,6 +94,7 @@ async function run(options: RunOptions = {}) {
     },
   });
   server.addHook("preHandler", apiKeyAuth(config));
+  // @ts-ignore
   server.addHook("preHandler", async (req, reply) =>
     router(req, reply, config)
   );
